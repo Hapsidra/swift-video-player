@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		007632982540AECAA0E96E271CB0FBCF /* SwiftVideoPlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E81E37DFE25B8AF62C47E45F298A0B /* SwiftVideoPlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		505C8E73AE69C6077C4432FC4364075A /* SwiftVideoPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DD3239454CC25363942F88D11FBB5B /* SwiftVideoPlayer-dummy.m */; };
-		75FABC343BDCD80BD1A593CBD6BD9860 /* SwiftVideoPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E96031556990F3979F676875E53147 /* SwiftVideoPlayerVC.swift */; };
+		75FABC343BDCD80BD1A593CBD6BD9860 /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E96031556990F3979F676875E53147 /* PlayerVC.swift */; };
 		93650B652FFF5B7F0DCE039A90A12AFD /* Pods-SwiftVideoPlayer_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FD538A4EFD2AE80B0E76854FF56380E /* Pods-SwiftVideoPlayer_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B55C2C3EDFB0B5932C44F6373AAA744E /* Pods-SwiftVideoPlayer_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A3040944D01E8BB2136B92B59585261F /* Pods-SwiftVideoPlayer_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C3BC5D3D6FC90B77A42D2BBEBEBB5214 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
@@ -31,7 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E96031556990F3979F676875E53147 /* SwiftVideoPlayerVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftVideoPlayerVC.swift; path = Sources/SwiftVideoPlayerVC.swift; sourceTree = "<group>"; };
+		00E96031556990F3979F676875E53147 /* PlayerVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlayerVC.swift; path = Sources/PlayerVC.swift; sourceTree = "<group>"; };
 		089B7EB6F11A66C587BC825C213BAADF /* Pods-SwiftVideoPlayer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftVideoPlayer_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		0FC2893220357B62D7FF101BE44C62A1 /* Pods-SwiftVideoPlayer_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftVideoPlayer_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		1A8E391B254BEDBC56CA89D9B4610119 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 		4DAAF2924D83461ABB01250DB0C66713 /* SwiftVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				00E96031556990F3979F676875E53147 /* SwiftVideoPlayerVC.swift */,
+				00E96031556990F3979F676875E53147 /* PlayerVC.swift */,
 				643DA7658E87B6D6F08F5BDFFAD8E545 /* PlayerView.swift */,
 				B472F500142B73AF5ECE90AEE4BE7D14 /* Support Files */,
 			);
@@ -324,7 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75FABC343BDCD80BD1A593CBD6BD9860 /* SwiftVideoPlayerVC.swift in Sources */,
+				75FABC343BDCD80BD1A593CBD6BD9860 /* PlayerVC.swift in Sources */,
 				E37017C4A567560B96C834ECB003A9ED /* PlayerView.swift in Sources */,
 				505C8E73AE69C6077C4432FC4364075A /* SwiftVideoPlayer-dummy.m in Sources */,
 			);

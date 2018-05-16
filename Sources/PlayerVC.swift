@@ -16,7 +16,7 @@ public struct Item {
     }
 }
 
-open class SwiftVideoPlayerVC: UIViewController {
+open class PlayerVC: UIViewController {
     private static let assetKeysRequiredToPlay = [
         "playable",
         "hasProtectedContent"
@@ -255,7 +255,7 @@ open class SwiftVideoPlayerVC: UIViewController {
     private func addItem(_ url: URL, toBack: Bool = true){
         print(#function, url.absoluteString)
         let asset = AVAsset(url: url)
-        let playerItem = AVPlayerItem(asset: asset, automaticallyLoadedAssetKeys: SwiftVideoPlayerVC.assetKeysRequiredToPlay)
+        let playerItem = AVPlayerItem(asset: asset, automaticallyLoadedAssetKeys: PlayerVC.assetKeysRequiredToPlay)
 
         NotificationCenter.default.addObserver(self, selector: #selector(itemDidEnd), name: .AVPlayerItemDidPlayToEndTime, object: playerItem)
         player.insert(playerItem, after: toBack ? nil : player.items()[0])
