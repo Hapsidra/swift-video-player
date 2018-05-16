@@ -192,7 +192,7 @@ open class SwiftVideoPlayerVC: UIViewController {
     }
 
     public func itemDidChange() {
-        if let url: URL = items[self.currentIndex].previewURL {
+        if let _: URL = items[self.currentIndex].previewURL {
             previewView.isHidden = false
             //previewView.load(url.absoluteString, contentMode: playerLayer!.videoGravity == .resizeAspectFill ? .scaleAspectFill : .scaleAspectFit )
         }
