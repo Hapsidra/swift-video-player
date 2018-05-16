@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SwiftVideoPlayer_Example' do
+  pod 'SwiftVideoPlayer', :path => '../'
+
+  target 'SwiftVideoPlayer_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
