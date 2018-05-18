@@ -7,18 +7,18 @@
 //
 
 import UIKit
+import SwiftVideoPlayer
 
 class ViewController: UIViewController {
-
+    var player: PlayerVC!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        player = PlayerVC([(videoURL: URL(string: "https://v.cdn.vine.co/r/videos/AA3C120C521177175800441692160_38f2cbd1ffb.1.5.13763579289575020226.mp4")!, previewURL: nil)])
+        self.player.view.frame = CGRect(x: 50, y: 50, width: view.frame.width - 100, height: view.frame.height - 100)
+        
+        self.addChildViewController(player)
+        self.view.addSubview(player.view)
+        self.player.didMove(toParentViewController: self)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
 

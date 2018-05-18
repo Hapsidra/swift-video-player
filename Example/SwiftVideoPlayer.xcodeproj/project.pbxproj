@@ -214,6 +214,7 @@
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = V75RFW43CG;
 						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -511,6 +512,8 @@
 			baseConfigurationReference = 2441A03756FA1F0FF781B890 /* Pods-SwiftVideoPlayer_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V75RFW43CG;
 				INFOPLIST_FILE = SwiftVideoPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -518,6 +521,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "pro.hapsidra.SwiftVideoPlayer-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -528,6 +532,8 @@
 			baseConfigurationReference = 2D2AFF493DDCE22768DD0737 /* Pods-SwiftVideoPlayer_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V75RFW43CG;
 				INFOPLIST_FILE = SwiftVideoPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -535,6 +541,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "pro.hapsidra.SwiftVideoPlayer-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};

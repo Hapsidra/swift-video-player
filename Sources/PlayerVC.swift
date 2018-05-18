@@ -6,16 +6,6 @@
 import UIKit
 import AVKit
 
-public struct Item {
-    let videoURL: URL!
-    let previewURL: URL?
-
-    public init(videoURL: URL!, previewURL: URL?) {
-        self.videoURL = videoURL
-        self.previewURL = previewURL
-    }
-}
-
 open class PlayerVC: UIViewController {
     private static let assetKeysRequiredToPlay = [
         "playable",
@@ -66,19 +56,15 @@ open class PlayerVC: UIViewController {
     }
     private var MAX_COUNT = 14
     private var MIN_COUNT = 3
-    private var items: [Item]!
+    private var items: [(videoURL: URL, previewURL: URL?)]!
     private (set) var currentIndex: Int = 0
 
-    convenience init(_ url: Item, videoGravity: AVLayerVideoGravity = .resizeAspectFill){
-        self.init([url], videoGravity: videoGravity)
-    }
-    
-    public init(_ urls: [Item], startIndex: Int = 0, videoGravity: AVLayerVideoGravity = .resizeAspectFill){
+    public init(_ items: [(videoURL: URL, previewURL: URL?)], startIndex: Int = 0, videoGravity: AVLayerVideoGravity = .resizeAspectFill){
         super.init(nibName: nil, bundle: nil)
-        self.items = urls
+        self.items = items
         self.currentIndex = startIndex
-        MAX_COUNT = min(urls.count, MAX_COUNT)
-        MIN_COUNT = min(urls.count, MIN_COUNT)
+        MAX_COUNT = min(items.count, MAX_COUNT)
+        MIN_COUNT = min(items.count, MIN_COUNT)
         playerLayer!.videoGravity = videoGravity
     }
 
@@ -119,9 +105,6 @@ open class PlayerVC: UIViewController {
 
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        UIApplication.shared.isStatusBarHidden = true
     }
 
     override open func viewDidAppear(_ animated: Bool) {
@@ -132,8 +115,6 @@ open class PlayerVC: UIViewController {
     override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.player.pause()
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        UIApplication.shared.isStatusBarHidden = false
     }
 
     override open func viewDidDisappear(_ animated: Bool) {
@@ -200,14 +181,16 @@ open class PlayerVC: UIViewController {
 
     @objc public func itemDidEnd() {
         print(#function)
-        if !moveForward() {
-            self.dismiss(animated: true)
-        }
+        if !moveForward() {}
     }
 
 
     @objc public func toggle() {
-        if player.rate != 0 {
+        if let currentTime = player.currentItem?.currentTime().seconds, let duration = player.currentItem?.duration.seconds, currentTime > duration {
+            player.seek(to: CMTime(seconds: 0, preferredTimescale: 1))
+            player.play()
+        }
+        else if player.rate != 0 {
             player.pause()
         }
         else {
